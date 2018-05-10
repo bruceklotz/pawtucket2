@@ -361,6 +361,24 @@ div.captionSlideshow{
 		width:990px;
 	}
 }
+.front .hpEvent{
+	margin:40px 0px 0px 0px;
+	border-top: 1px solid #b1b1b1;
+	border-bottom: 1px solid #b1b1b1;
+	padding:40px 0px 0px 0px;
+}
+.front .hpEvent img{
+	width:100%;
+	height:auto;
+}
+.front .hpEvent h1{
+	font-size: 30px;
+	padding-top:0px;
+}
+.front .hpEvent .col-xs-12{
+	margin-bottom:40px;
+}
+
 /* ------ Details -------------- */
 .jcarousel-control-prev{
 	left:0px !important;
