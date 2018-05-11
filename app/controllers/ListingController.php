@@ -131,10 +131,11 @@
 			//
 			// Sorting
 			//
+			$va_sorts = caGetOption('sortBy', $va_listing_info, null);
 			$vb_sort_changed = false;
  			if (!($ps_sort = $this->request->getParameter("sort", pString))) {
- 				if (!($ps_sort = $this->opo_result_context->getCurrentSort())) {
- 					if(is_array(($va_sorts = caGetOption('sortBy', $va_listing_info, null)))) {
+ 				if (!($ps_sort = $this->opo_result_context->getCurrentSort()) || !in_array($ps_sort, array_keys($va_sorts))) {
+ 					if(is_array($va_sorts)) {
  						$ps_sort = array_shift(array_keys($va_sorts));
  						$vb_sort_changed = true;
  					}
@@ -142,16 +143,18 @@
  			}else{
  				$vb_sort_changed = true;
  			}
- 			if($vb_sort_changed){
+ 			$va_sort_direction = caGetOption('sortDirection', $va_listing_info, null);
+			if($vb_sort_changed){
 				# --- set the default sortDirection if available
-				$va_sort_direction = caGetOption('sortDirection', $va_listing_info, null);
 				if($ps_sort_direction = $va_sort_direction[$ps_sort]){
 					$this->opo_result_context->setCurrentSortDirection($ps_sort_direction);
 				} 			
  			}
   			if (!($ps_sort_direction = $this->request->getParameter("direction", pString))) {
- 				if (!($ps_sort_direction = $this->opo_result_context->getCurrentSortDirection())) {
- 					$ps_sort_direction = 'asc';
+ 				if (!($ps_sort_direction = $this->opo_result_context->getCurrentSortDirection()) || !in_array($ps_sort_direction, $va_sort_direction)) {
+ 					if(!($ps_sort_direction = array_shift($va_sort_direction))){
+ 						$ps_sort_direction = 'asc';
+ 					}
  				}
  			}
  			
