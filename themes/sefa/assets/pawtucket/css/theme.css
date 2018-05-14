@@ -150,6 +150,10 @@ div.captionSlideshow{
 	font-size:6px;
 	padding-left:5px;
 }
+.fullWidthImg img{
+	height:auto;
+	width:100%;
+}
 /* ------Nav Styles------------ */
 .navbar-brand {
 	padding:15px 0 0 0;
@@ -371,9 +375,11 @@ div.captionSlideshow{
 	width:100%;
 	height:auto;
 }
-.front .hpEvent h1{
+.front .hpEvent h1, .front .hpEvent h1 a{
 	font-size: 30px;
 	padding-top:0px;
+	color:#000;
+	text-decoration:none;
 }
 .front .hpEvent .col-xs-12{
 	margin-bottom:40px;
