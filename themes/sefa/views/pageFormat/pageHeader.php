@@ -48,7 +48,6 @@
 	}else{
 		$this->request->session->setVar("current_exhibition_id", "");
 	}
-print $vn_current_exhibition;
 ?><!DOCTYPE html>
 <html lang="en">
 	<head>
