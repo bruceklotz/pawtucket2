@@ -273,7 +273,7 @@
 					}
 				}
 			}				
-			if ($vs_digilinks = $t_object->get('ca_objects.Digital_link', array('returnAsArray' => t
+			if ($vs_digilinks = $t_object->get('ca_objects.Digital_link', array('returnAsArray' => true))) {
                foreach ($vs_digilinks as $va_key => $vs_digilink) { 
                     $vs_learn_even.=  "<div class='unit'><a href='".$vs_digilink."' target='
                }
