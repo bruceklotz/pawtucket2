@@ -61,6 +61,9 @@ a {
 a:hover, a:active, a:focus, a.readmore-js-toggle {
 	color: #cc9900;
 }
+b, strong {
+	font-family:'Open Sans', Helvetica, sans-serif;
+}
 .container {
 	max-width:930px;
 }
