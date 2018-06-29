@@ -106,8 +106,7 @@
 			];
 			$vn_page++;
 	}
-	if(caGetOption("context", $va_data, null) == "occurrences"){
-    $va_services[] = [
+	$va_services[] = [
         "@context" => "http://iiif.io/api/search/0/context.json",
         "@id" => caNavUrl($vo_request, '*', '*', 'SearchMediaData', ['identifier' => $vs_identifier, $t_subject->primaryKey() => $t_subject->getPrimaryKey(), 'context' => caGetOption('context', $va_data, null), 'display' => caGetOption('display_type', $va_data, null)]),
         "profile" => "http://iiif.io/api/search/0/search",
@@ -118,7 +117,6 @@
             "label" => _t("Get suggested words in this manifest")
         ]
     ];
-	}
 	
 	$va_manifest = [
 		"@context" => "http://iiif.io/api/presentation/2/context.json",
