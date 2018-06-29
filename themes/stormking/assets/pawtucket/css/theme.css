@@ -83,7 +83,9 @@
 	font-size: 12px;
 	line-height: 20px;
 }
-
+a.underline{
+	text-decoration:underline;
+}
 /* Storm King theme */
 
 html,body,.page,.wrapper {
@@ -111,7 +113,7 @@ a, a:hover, a:active, a:focus{
 .Browse #pageArea {
 	padding-left:10px;
 }
-.fullWidthImage img{
+.fullWidth img{
 	width:100%;
 	height:auto;
 }
@@ -418,6 +420,12 @@ p, .collectionsList p {
 }
 .detail .unit {
 	margin-bottom:15px;
+	line-height:1.5em;
+}
+.detail .unit p {
+	font-size:14px;
+	margin-bottom:15px;
+	line-height:1.5em;
 }
 .detail .repViewerCont:hover .detailMediaToolbar {
 	display:none;
@@ -711,6 +719,12 @@ p, .collectionsList p {
 .relatedArtwork a {
 	text-decoration:none;
 }
+.detail .relatedArtwork a {
+	text-decoration:underline;
+}
+.relatedArtwork{
+	overflow:hidden;
+}
 .bResultListItem {
 	box-shadow:none;
 	border-bottom:1px solid #c7c7c7;
@@ -952,10 +966,13 @@ p, .collectionsList p {
 
 
 
-
-
-
-
+.multisearch .jcarousel-next, .multisearch .jcarousel-prev{
+	top:0px;
+}
+.multisearch .jcarousel-next.inactive, .multisearch .jcarousel-prev.inactive{
+	display:block;
+	opacity:.25;
+}
 
 
 
