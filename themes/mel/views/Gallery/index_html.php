@@ -23,9 +23,16 @@
 					<div id="gallerySetInfo" class="row">
 					<hr/>
 <?php
+					$va_ordered_sets = [];
                     foreach($va_sets as $vn_set_id => $va_set){
                         $t_set = new ca_sets($va_set["set_id"]);
-                        $va_first_item = array_shift($va_first_items_from_set[$vn_set_id]);
+                        $vs_idno = $t_set->get("ca_sets.set_code");
+                        $va_ordered_sets[$vs_idno] = $va_set["set_id"];
+                    }
+                    ksort($va_ordered_sets);
+                    foreach($va_ordered_sets as $vs_idno => $vn_id){
+                    	$t_set = new ca_sets($vn_id);
+                        $va_first_item = array_shift($va_first_items_from_set[$vn_id]);
                         $t_first_rep = new ca_object_representations($va_first_item['representation_id']);
                         $vs_rep_iconlarge = $t_first_rep->get("ca_object_representations.media.iconlarge");
 ?>
@@ -33,13 +40,13 @@
                             <div class="set-feature-box">
 <?php 
                                     if($vs_rep_iconlarge){
-                                        print caNavLink($this->request, $vs_rep_iconlarge, "", "", "Gallery", $va_set["set_id"]); 
+                                        print caNavLink($this->request, $vs_rep_iconlarge, "", "", "Gallery", $vn_id); 
                                     } else {
                                         print caGetThemeGraphic($this->request, 'placeholder_front.jpg');
                                     }
 ?>
                                 <div class="set-feature-title">
-                                    <?php print "<H4>".caNavLink($this->request, $t_set->get("ca_sets.preferred_labels.name"), "", "", "Gallery", $va_set["set_id"])."</H4>"; ?>
+                                    <?php print "<H4>".caNavLink($this->request, $t_set->get("ca_sets.preferred_labels.name"), "", "", "Gallery", $vn_id)."</H4>"; ?>
                                 </div>
                             </div>
                         </div>
