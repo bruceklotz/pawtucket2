@@ -3855,7 +3855,7 @@ li.highlight {
   margin-left: 0px;
 }
 
-.overlay {
+.miradoroverlay {
   display: none;
   position: absolute;
   right: 0;
