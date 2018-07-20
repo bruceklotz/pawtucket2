@@ -31,9 +31,7 @@
 		<footer id="footer">
 		    <div class="row">
 		        <div class="col-sm-4">
-                    <div><h6>The Florida Slave Trade Documentation and Education Center is funded in part by the Florida Department of Economic Opportunity.</h6></div>
-        
-                    <div><h6>A Project of <a href="http://melfisher.org" target="_blank">The Mel Fisher Maritime Museum</a>, Key West, FL</a></h6></div>
+                    {{{footer_text}}}
                 </div>
                 <div class="col-sm-8 footer-logo">
 			        <div class="deo"><?php print caGetThemeGraphic($this->request, 'deo.png'); ?></div>

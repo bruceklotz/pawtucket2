@@ -2,12 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <H1><?php #print $this->getVar("section_name"); ?>Meet 25 Objects</H1>
-                <p>The Mel Fisher Maritime Museum’s transatlantic slave trade artifact collection contains rare tangible evidence of a cruel period in history. These objects document an era that history books all too often ignore.</p>
-                
-                <p>More than thirty years of research, conservation, and exhibition have brought us to this online virtual exhibition.</p>
-                
-                <p>We have selected twenty-five objects to chronicle the history of the trade.</p>
+            	{{{exhibition_text}}}
             </div>
         </div>
     </div>

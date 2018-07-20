@@ -12,27 +12,7 @@
     </div>
 	<div class="row">
 		<div class="col-sm-5 col-sm-offset-1">
-		    <h2>Introduction</h2>
-			<p>This education package has been developed as a free educational resource. The exercises are adaptable for a range of ages, interests, and capabilities so teachers should feel free to choose the exercises that best fit their educational focus. This package includes the following:</p>
-
-<ul>
-	<li>
-	<p>Module 1: Exploring Slavery through Museums is a PDF slideshow that provides a context for the stories presented in the Pop Up Museum. This overview of the topic of Transatlantic Slavery is a broad look at the influences that both supported and ended the practice of slavery and how archaeology that has helped reveal this history. The PDF presentation available online includes Teacher Notes for additional information.</p>
-	</li>
-	<li>
-	<p>Module 2: Exploring Slavery through Vocabulary provides a set of vocabulary words important to facilitating meaningful discussions about the Transatlantic Slave Trade. Two companion worksheets, including a word search and crossword, are included to help students practice and retain the spellings and definitions of any unfamiliar words prior to the beginning the next module.</p>
-	</li>
-	<li>
-	<p>Module 3: Exploring Slavery through Art offers an opportunity to use art interpretation as a means of introducing a historical topic. The Transatlantic Slave Trade is a complex, emotional, and sensitive subject and should not be reduced to names, dates, and places. Using art that was created during the Transatlantic Slave Trade period can create a more immediate understanding of the time period. It can also inspire students to search for other artwork that &ldquo;tells a story.&rdquo;</p>
-	</li>
-	<li>
-	<p>Module 4: Exploring Slavery through Personal Narratives introduces the importance of collecting stories directly from the people who experienced them. Working with narratives can help history come alive for students as they realize that history is filled with real people.</p>
-	</li>
-	<li>
-	<p>Module 5: Exploring Slavery through Additional Resources is a collection of additional materials and readings for both students and teachers. Berenice Miles&rsquo; Teaching the Abolition of the Transatlantic Slave Trade provides teachers with useful tips and strategies for effectively teaching this subject. The Forgotten Story of American Indian Slavery, edited by Dr. William Moreau Goins, and Indentured Servitude, by Sharon Fabian, remind students that the Transatlantic Slave Trade did not just impact Africans.</p>
-	</li>
-</ul>
-
+			{{{learn_text}}}
 		</div>
 		<div class="col-sm-5 resource-col">
 		    
