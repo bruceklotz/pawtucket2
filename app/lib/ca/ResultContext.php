@@ -7,7 +7,7 @@
  * ----------------------------------------------------------------------
  *
  * Software by Whirl-i-Gig (http://www.whirl-i-gig.com)
- * Copyright 2010-2017 Whirl-i-Gig
+ * Copyright 2010-2018 Whirl-i-Gig
  *
  * For more information visit http://www.CollectiveAccess.org
  *
@@ -72,6 +72,24 @@
 		 */
 		public function tableName() {
 			return $this->ops_table_name;
+		}
+		# ------------------------------------------------------------------
+		/**
+		 * Returns type result context
+		 *
+		 * @return string
+		 */
+		public function findType() {
+			return $this->ops_find_type;
+		}
+		# ------------------------------------------------------------------
+		/**
+		 * Returns subtype of result context 
+		 *
+		 * @return string
+		 */
+		public function findSubType() {
+			return $this->ops_find_subtype;
 		}
 		# ------------------------------------------------------------------
 		# Context getter/setters
@@ -866,37 +884,51 @@
 			$o_semi_storage = $this->getSemiPersistentStorageInstance();
 			
 			if ($ps_find_type) {
-				if(
-					(!is_array($va_semi = $o_semi_storage->getVar('result_context_'.$this->ops_table_name.'_'.$ps_find_type.'_'.$ps_find_subtype)))
-					&&
-					(!is_array($va_semi = $o_semi_storage->getVar('result_context_'.$this->ops_table_name.'_'.$ps_find_type)))
-				) {
-					$va_semi = array();
+			    $va_semi = $va_context = [];
+			    
+			    if(is_array($d = $o_semi_storage->getVar('result_context_'.$this->ops_table_name))) {
+					$va_semi = array_merge($va_semi, $d);
 				}
-				if (
-					(!is_array($va_context = $o_storage->getVar('result_context_'.$this->ops_table_name.'_'.$ps_find_type.'_'.$ps_find_subtype)))
-					&&
-					(!is_array($va_context = $o_storage->getVar('result_context_'.$this->ops_table_name.'_'.$ps_find_type)))
-				) { 
-					$va_context = array();
+			    if(is_array($d = $o_semi_storage->getVar('result_context_'.$this->ops_table_name.'_'.$ps_find_type))) {
+					$va_semi = array_merge($va_semi, $d);
+				}
+				if(is_array($d = $o_semi_storage->getVar('result_context_'.$this->ops_table_name.'_'.$ps_find_type.'_'.$ps_find_subtype))) {
+					$va_semi = array_merge($va_semi, $d);
+				}
+				
+				if(is_array($d = $o_storage->getVar('result_context_'.$this->ops_table_name))) {
+					$va_context = array_merge($va_context, $d);
+				}
+			    if(is_array($d = $o_storage->getVar('result_context_'.$this->ops_table_name.'_'.$ps_find_type))) {
+					$va_context = array_merge($va_context, $d);
+				}
+				if(is_array($d = $o_storage->getVar('result_context_'.$this->ops_table_name.'_'.$ps_find_type.'_'.$ps_find_subtype))) {
+					$va_context = array_merge($va_context, $d);
 				}
 				return array_merge($va_context, $va_semi); 
 			}
 			
 			if (!$this->opa_context) { 
-				if(
-					(!is_array($va_semi = $o_semi_storage->getVar('result_context_'.$this->ops_table_name.'_'.$vs_find_type.'_'.$vs_find_subtype)))
-					&&
-					(!is_array($va_semi = $o_semi_storage->getVar('result_context_'.$this->ops_table_name.'_'.$vs_find_type)))
-				){
-					$va_semi = array();
+			    $va_semi = $va_context = [];
+			    
+			    if(is_array($d = $o_semi_storage->getVar('result_context_'.$this->ops_table_name))) {
+					$va_semi = array_merge($va_semi, $d);
 				}
-				if(
-					(!is_array($va_context = $o_storage->getVar('result_context_'.$this->ops_table_name.'_'.$vs_find_type.'_'.$vs_find_subtype)))
-					&&
-					(!is_array($va_context = $o_storage->getVar('result_context_'.$this->ops_table_name.'_'.$vs_find_type)))
-				) { 
-					$va_context = array();
+			    if(is_array($d = $o_semi_storage->getVar('result_context_'.$this->ops_table_name.'_'.$vs_find_type))) {
+					$va_semi = array_merge($va_semi, $d);
+				}
+				if(is_array($d = $o_semi_storage->getVar('result_context_'.$this->ops_table_name.'_'.$vs_find_type.'_'.$vs_find_subtype))) {
+					$va_semi = array_merge($va_semi, $d);
+				}
+				
+				if(is_array($d = $o_storage->getVar('result_context_'.$this->ops_table_name))) {
+					$va_context = array_merge($va_context, $d);
+				}
+			    if(is_array($d = $o_storage->getVar('result_context_'.$this->ops_table_name.'_'.$vs_find_type))) {
+					$va_context = array_merge($va_context, $d);
+				}
+				if(is_array($d = $o_storage->getVar('result_context_'.$this->ops_table_name.'_'.$vs_find_type.'_'.$vs_find_subtype))) {
+					$va_context = array_merge($va_context, $d);
 				}
 				$this->opa_context = array_merge($va_semi, $va_context); 
 			}
@@ -937,9 +969,7 @@
 			} else {
 				$va_context = $pa_context;
 			}
-			if (!($vs_find_subtype = $ps_find_subtype)) {
-				$vs_find_subtype = $this->ops_find_subtype;
-			}
+			$vs_find_subtype = is_null($ps_find_subtype) ? $this->ops_find_subtype : $ps_find_subtype;
 			
 			$va_semi_context = array(
 				'history' => $va_context['history'],

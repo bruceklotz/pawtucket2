@@ -236,7 +236,7 @@
  			
  			// Do we need to pull in the multisearch result set?
  			if ((ResultContext::getLastFind($this->request, $vs_table, array('noSubtype' => true))) === 'multisearch') {
- 				$o_context = new ResultContext($this->request, $vs_table, 'multisearch', $ps_function);
+ 				$o_context = new ResultContext($this->request, $vs_table, 'multisearch');
  				$o_context->setAsLastFind(false);
  				$o_context->saveContext();
  			} else {
