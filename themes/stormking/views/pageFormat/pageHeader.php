@@ -52,9 +52,18 @@
 ?><!DOCTYPE html>
 <html lang="en">
 	<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142371-37"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-142371-37');
+	</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
 	<?php print MetaTagManager::getHTML(); ?>
+	<link rel="stylesheet" type="text/css" href="<?php print $this->request->getAssetsUrlPath(); ?>/mirador/css/mirador-combined.css">
 	<?php print AssetLoadManager::getLoadHTML($this->request); ?>
 
 	<title><?php print (MetaTagManager::getWindowTitle()) ? MetaTagManager::getWindowTitle() : $this->request->config->get("app_display_name"); ?></title>
@@ -180,10 +189,10 @@
 						<li>
 							<?php print caNavLink($this->request, _t("Archives"), "", "", "About", "archives"); ?> 
 <?php
-							if (($this->request->getController() == "Collections") | (($this->request->getController() == "Listing") && ($this->request->getAction() == "objects")) | (($this->request->getController() == "About") && ($this->request->getAction() == "archives")) | (($this->request->getController() == "Detail") && ($this->request->getAction() == "collections")) | ($this->request->getAction() == "oralhistory") | (($this->request->getController() == "Detail") && ($this->request->getAction() == "archival"))) {
+							if (($this->request->getController() == "Collections") | (($this->request->getController() == "Listing") && ($this->request->getAction() == "oralhistory")) | (($this->request->getController() == "About") && ($this->request->getAction() == "archives")) | (($this->request->getController() == "Detail") && ($this->request->getAction() == "collections")) | ($this->request->getAction() == "oralhistory") | (($this->request->getController() == "Detail") && ($this->request->getAction() == "archival"))) {
 ?>							
 								<ul class='subMenu'>
-									<li style="padding-top:6px;" <?php print (($this->request->getController() == "Listing")| ($this->request->getAction() == "oralhistory") ) ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Oral History"), "", "", "Listing", "objects"); ?></li>					
+									<li style="padding-top:6px;" <?php print (($this->request->getController() == "Listing")| ($this->request->getAction() == "oralhistory") ) ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Oral History"), "", "", "Listing", "oralhistory"); ?></li>					
 									<!--<li <?php print (($this->request->getController() == "Search") && ($this->request->getAction() == "advanced")) ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Search"), "", "", "Search", "advanced/objects"); ?></li>-->
 									<li <?php print ( (($this->request->getController() == "Detail") && ($this->request->getAction() == "archival")) | ($this->request->getController() == "Collections") | ($this->request->getAction() == "collections")) ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Special Collections"), "", "", "Collections", "index"); ?></li>					
 								</ul>
@@ -322,8 +331,8 @@
 						</li>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
 							<?php print caNavLink($this->request, _t("Archives"), "", "", "About", "archives"); ?> 
-							<ul class='sub-menu<?php print (($this->request->getController() == "Collections") | (($this->request->getController() == "Listing") && ($this->request->getAction() == "objects")) | (($this->request->getController() == "About") && ($this->request->getAction() == "archives")) | (($this->request->getController() == "Detail") && ($this->request->getAction() == "collections")) | ($this->request->getAction() == "oralhistory") | (($this->request->getController() == "Detail") && ($this->request->getAction() == "archival"))) ? " active" : ""; ?>'>
-								<li class='menu-item menu-item-type-post_type menu-item-object-page<?php print (($this->request->getController() == "Listing")| ($this->request->getAction() == "oralhistory") ) ? ' current-menu-item' : ''; ?>'><?php print caNavLink($this->request, _t("Oral History"), "", "", "Listing", "objects"); ?></li>					
+							<ul class='sub-menu<?php print (($this->request->getController() == "Collections") | (($this->request->getController() == "Listing") && ($this->request->getAction() == "oralhistory")) | (($this->request->getController() == "About") && ($this->request->getAction() == "archives")) | (($this->request->getController() == "Detail") && ($this->request->getAction() == "collections")) | ($this->request->getAction() == "oralhistory") | (($this->request->getController() == "Detail") && ($this->request->getAction() == "archival"))) ? " active" : ""; ?>'>
+								<li class='menu-item menu-item-type-post_type menu-item-object-page<?php print (($this->request->getController() == "Listing")| ($this->request->getAction() == "oralhistory") ) ? ' current-menu-item' : ''; ?>'><?php print caNavLink($this->request, _t("Oral History"), "", "", "Listing", "oralhistory"); ?></li>					
 								<li class='menu-item menu-item-type-post_type menu-item-object-page<?php print ( (($this->request->getController() == "Detail") && ($this->request->getAction() == "archival")) | ($this->request->getController() == "Collections") | ($this->request->getAction() == "collections")) ? ' current-menu-item' : ''; ?>'><?php print caNavLink($this->request, _t("Special Collections"), "", "", "Collections", "index"); ?></li>					
 							</ul>
 						</li>

@@ -1367,7 +1367,7 @@ a.browseRemoveFacet img {
     left: 0px !important;
 }
 .front .jcarousel-control-next {
-    right:0px; !important;
+    right:0px !important;
 }
 .front .jcarousel-control-next,
 .front .jcarousel-control-prev {
@@ -1475,6 +1475,27 @@ a.browseRemoveFacet img {
 }
 .frontSlideCaption a{
 	color:#FFF;
+}
+
+.frontGrid img{
+	width:100%;
+	height:auto;
+}
+.frontGridCaption{
+	padding-top:5px;
+	margin-bottom:30px;	
+}
+.frontGallerySlideCaption{
+	padding-top:5px;
+}
+.front .galleryItems li{
+	padding-right:30px;
+}
+.front .galleryItems-wrapper{
+	margin-top:0px;
+}
+.front .galleryItems-wrapper .jcarousel-control-prev, .front .galleryItems-wrapper .jcarousel-control-next {
+    top: 40%;
 }
 
 /* --------------------------------- */
@@ -1872,6 +1893,9 @@ a.browseRemoveFacet .glyphicon {
 	text-align:right;
 	font-size:18px;
 	padding-bottom:5px;
+}
+#bViewButtons .disabled, #lbViewButtons .disabled{
+    pointer-events: all;
 }
 #bLetterBar a{
 	padding:3px;
@@ -2503,6 +2527,9 @@ a.browseRemoveFacet .glyphicon {
 	color:#fff;
 	background-color: #858585;
 }
+.collectionsContainer a.openCollection.active small {
+    color: #fff;
+}
 .collectionsContainer a .fa, .collectionsContainer .fa, #collectionLoad a .fa, #collectionLoad .fa{
 	color: #858585;
 }
@@ -2707,7 +2734,10 @@ a.browseRemoveFacet .glyphicon {
 	padding-bottom:10px; 
 	margin-bottom:15px;
 }	
- 
+ /* Universal viewer */
+.detail .repViewerCont .uv{
+	min-height:500px;
+}
    
 
 /* bookreader */
@@ -3171,7 +3201,7 @@ div.caMediaOverlayRepThumbs a.selectedRep img{
 	padding: 5px;
 	/* min-width: 120px; */
 	max-width: 300px;
-	*/ min-height: 50px; */
+	/* min-height: 50px; */
 }
 
 /* ----------------- print specific styles ----------------------*/

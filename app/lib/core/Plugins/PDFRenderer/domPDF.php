@@ -7,7 +7,7 @@
  * ----------------------------------------------------------------------
  *
  * Software by Whirl-i-Gig (http://www.whirl-i-gig.com)
- * Copyright 2014 Whirl-i-Gig
+ * Copyright 2014-2018 Whirl-i-Gig
  *
  * For more information visit http://www.CollectiveAccess.org
  *
@@ -35,8 +35,10 @@
     */ 
     
 include_once(__CA_LIB_DIR__."/core/Plugins/PDFRenderer/BasePDFRendererPlugin.php");
-require_once(__CA_LIB_DIR__.'/core/Parsers/dompdf/dompdf_config.inc.php');
 include_once(__CA_APP_DIR__."/helpers/mediaPluginHelpers.php");
+
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class WLPlugPDFRendererdomPDF Extends BasePDFRendererPlugIn Implements IWLPlugPDFRenderer {
 	# ------------------------------------------------
@@ -56,7 +58,9 @@ class WLPlugPDFRendererdomPDF Extends BasePDFRendererPlugIn Implements IWLPlugPD
 		
 		$this->description = _t('Renders HTML as PDF using domPDF');
 		
-		$this->renderer = new DOMPDF();
+		$options = new Options();
+		$options->set('isRemoteEnabled', TRUE);
+		$this->renderer = new DOMPDF($options);
 	}
 	# ------------------------------------------------
 	/**

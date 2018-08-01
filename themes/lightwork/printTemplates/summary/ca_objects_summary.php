@@ -181,7 +181,7 @@
 			print "<div class='unit'><h6>Biography</h6>".$vs_bio."</div>";
 		}				
 		if ($vs_essay = $t_entity->get('ca_entities.essays', array('delimiter' => '<hr>'))) {
-			print "<div class='unit'><h6>Essays</h6>".$vs_essay."</div>";
+			print "<div class='unit'><h6>Essays</h6>".strip_tags($vs_essay)."</div>";
 		}																																					
 	}
 		
