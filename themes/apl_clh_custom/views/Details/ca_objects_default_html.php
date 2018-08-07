@@ -52,7 +52,7 @@
 				
 				
 				{{{<ifdef code="ca_objects.idno">
-					<h6 class="metadata-label">Identifer:</h6>
+					<h6 class="metadata-label">Identifier:</h6>
 					^ca_objects.idno<br/>
 				</ifdef>}}}
 
