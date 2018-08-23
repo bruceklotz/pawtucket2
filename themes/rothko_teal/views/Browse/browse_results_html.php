@@ -224,8 +224,13 @@ if (!$vb_ajax) {	// !ajax
 	
 	print "<div class='col-xs-12 col-md-12 col-lg-12'>";
 	foreach ($va_browse_types as $va_browse_type => $va_browse_info_list) {
+		$vs_browse_target_active = $vs_current_browse;
+		if (($vs_current_browse == "works_in_collection") | ($vs_current_browse == "works_in_occurrence")){
+			$vs_browse_target_active = "artworks";
+		}
 		if (in_array($va_browse_type, ['works_in_collection', 'works_in_occurrence'])) { continue; }
-		if ($vs_current_browse == $va_browse_type) {
+		
+		if ($vs_browse_target_active == $va_browse_type) {
 			$vs_active_class = "active";
 		} else {
 			$vs_active_class = null;
@@ -329,7 +334,7 @@ if (!$vb_ajax) {	// !ajax
 				foreach($va_criteria as $va_criterion) {
 					#print "<strong class='criterion'>".strtolower($va_criterion['facet']).':</strong>';
 					if ($va_criterion['facet_name'] != '_search') {
-						print caNavLink($this->request, '<button type="button" class="btn btn-default btn-sm refine">'.ucfirst($va_criterion['value']).' '.caGetThemeGraphic($this->request, 'closewhite.png', array('class' => 'clearFacet')).'</button>', 'browseRemoveFacet', '*', '*', '*', array('removeCriterion' => $va_criterion['facet_name'], 'removeID' => $va_criterion['id'], 'view' => $vs_current_view, 'key' => $vs_browse_key));
+						print '<button type="button" class="btn btn-default btn-sm refine">'.ucfirst($va_criterion['value']).caNavLink($this->request, caGetThemeGraphic($this->request, 'closewhite.png', array('class' => 'clearFacet')), 'browseRemoveFacet', '*', '*', '*', array('removeCriterion' => $va_criterion['facet_name'], 'removeID' => $va_criterion['id'], 'view' => $vs_current_view, 'key' => $vs_browse_key)).'</button>';
 					}else{
 						print ' <button type="button" class="btn btn-default btn-sm refine">'.ucfirst($va_criterion['value']).'</button>';
 						$vs_search = $va_criterion['value'];
