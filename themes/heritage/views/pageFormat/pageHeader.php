@@ -159,12 +159,11 @@
 					if(!$this->request->isLoggedIn()){
 ?>
 						<li <?php print ($this->request->getController() == "Front") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Browse Timeline"), "", "", "", ""); ?></li>
-						<li><?php print "<a href='#' onclick='caMediaPanel.showPanel(\"".caNavUrl($this->request, '', 'LoginReg', 'LoginForm', array())."\"); return false;' >"._t("Login")."</a>"; ?></li>
 <?php
 					}else{
 ?>
 					<li <?php print ($this->request->getAction() == "Lightbox") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("My Sets"), "", "", "Lightbox", "Index"); ?></li>
-					<li <?php print ($this->request->getAction() == "occurrences") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Browse Timeline"), "", "", "Browse", "occurrences"); ?></li>
+					<li <?php print (strtolower($this->request->getAction() == "occurrences")) ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Browse Timeline"), "", "", "Browse", "occurrences"); ?></li>
 <?php
 					}
 ?>
