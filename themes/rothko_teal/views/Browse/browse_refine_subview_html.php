@@ -47,11 +47,11 @@
 		print "<a href='#' class='pull-right' id='bRefineClose' onclick='jQuery(\"#bRefine\").toggle(); return false;'><span class='glyphicon glyphicon-remove-circle'></span></a>";
         
 		foreach ($va_browse_types as $vs_browse_id => $va_browse_type) {
-			if($vs_browse_id == 'works_in_collection') { continue; }    // Never show "works in collection", which is a browse type uses only to filter objects on collection details
+			if($vs_browse_id == 'worksInCollection') { continue; }    // Never show "works in collection", which is a browse type uses only to filter objects on collection details
 			$vs_menu_item_width = $va_browse_type['menuWidth'];
-			// When browse type is "works_in_collection" we don't want to show the browse title but we DO want to show the facet
+			// When browse type is "worksInCollection" we don't want to show the browse title but we DO want to show the facet
 			// so we force the browse type to "artworks", which will have the same facets but be labelled as NGA requests
-			if (($vs_browse_type == 'works_in_collection') && ($vs_browse_id == 'artworks')) {
+			if (($vs_browse_type == 'worksInCollection') && ($vs_browse_id == 'artworks')) {
 			    $vs_browse_type = 'artworks';
 			}
 			#print "<div class='browseTarget'>".caNavLink($this->request, $va_browse_type['displayName'], ($vs_browse_type == $vs_browse_id ? 'activeBrowse' : ''), '', 'Browse', $vs_browse_id)."</div>";
