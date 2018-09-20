@@ -24,7 +24,7 @@
 		Central Library - Main Floor<br>
 		1015 N. Quincy St.<br>
 		Arlington, VA 22201<br>
-		Phone: (703) 228-5956<br>
+		Phone: (703) 228-5966<br>
 		Email: <a href="mailto:localhistory@arlingtonva.us">localhistory@arlingtonva.us</a>
 	</div>
 </div>
