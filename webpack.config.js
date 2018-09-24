@@ -14,24 +14,30 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
+        {
+            test: /\.vue$/,
+            use: ['vue-loader'],
+        },{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: "babel-loader"
+            }
+        },{
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract(
+                {
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
+                }
+            )
         }
-      },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-          })
-      }
     ]
   },
   plugins: [ 
     new ExtractTextPlugin({filename: 'styles.css'})
-  ]
+  ],
+  resolve: {
+    modules: ['node_modules']
+  }
 };

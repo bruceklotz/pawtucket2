@@ -51,9 +51,8 @@
 	
 	<title><?php print (MetaTagManager::getWindowTitle()) ? MetaTagManager::getWindowTitle() : $this->request->config->get("app_display_name"); ?></title>
 	
-	
-    <link rel='stylesheet' href='assets/styles.css' type='text/css' media='all'/>
-    <script src="assets/main.js"></script>
+    <link rel='stylesheet' href='<?php print $this->request->getAssetsUrlPath(); ?>/styles.css' type='text/css' media='all'/>
+    <script src="<?php print $this->request->getAssetsUrlPath(); ?>/main.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default yamm" role="navigation">

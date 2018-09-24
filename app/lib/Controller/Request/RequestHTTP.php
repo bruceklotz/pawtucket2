@@ -403,7 +403,7 @@ class RequestHTTP extends Request {
 	 * 
 	 */
 	public function getAssetsDirectoryPath() {
-		return $this->config->get('ca_base_dir').$this->config->get('ca_url_root')."/assets";
+		return $this->config->get('ca_base_dir')."/assets";
 	}
 	# -------------------------------------------------------
 	/**
