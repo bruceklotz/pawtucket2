@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * editor/objects/ajax_representation_annotations_json.php : 
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

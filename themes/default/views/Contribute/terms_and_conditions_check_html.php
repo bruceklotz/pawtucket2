@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * themes/default/views/Contribute/terms_and_conditions_check_html.php : simple terms and conditions click-through sub-view
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

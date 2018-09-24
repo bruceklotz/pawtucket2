@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * themes/default/views/Lightbox/ajax_save_set_info_json.php :
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

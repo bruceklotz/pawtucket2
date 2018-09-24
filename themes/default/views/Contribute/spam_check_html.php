@@ -1,7 +1,5 @@
 <?php	
 /* ----------------------------------------------------------------------
- * themes/default/views/Contribute/spam_check_html.php : simple spam protection sub-view
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

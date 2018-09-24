@@ -47,7 +47,7 @@
 	function caGetThemeGraphic($po_request, $ps_file_path, $pa_attributes=null, $pa_options=null) {
 		$vs_base_url_path = $po_request->getThemeUrlPath();
 		$vs_base_path = $po_request->getThemeDirectoryPath();
-		$vs_file_path = "/assets/pawtucket/graphics/{$ps_file_path}";
+		$vs_file_path = "/graphics/{$ps_file_path}";
 
         if (file_exists($vs_base_path.$vs_file_path)) {
             // Graphic is present in currently configured theme

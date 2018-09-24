@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * app/views/objects/object_representation_within_media_search_results_json.php : 
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

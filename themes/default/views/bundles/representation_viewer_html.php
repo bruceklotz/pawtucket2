@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * themes/default/views/bundles/representation_viewer_html.php : 
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

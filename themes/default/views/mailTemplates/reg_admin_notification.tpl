@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * default/views/mailTemplates/reg_admin_notification.tpl
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

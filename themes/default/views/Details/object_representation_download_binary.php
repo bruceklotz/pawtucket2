@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * app/views/objects/object_representation_download_binary.php : 
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

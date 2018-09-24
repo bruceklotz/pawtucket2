@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * /views/Sets/exportTemplates/ca_objects_sets_pdf_html.php 
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * default/views/mailTemplates/instructions_subject.tpl
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

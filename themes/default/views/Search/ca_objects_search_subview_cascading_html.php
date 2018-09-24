@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * themes/default/views/Search/ca_objects_search_subview_html.php : 
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

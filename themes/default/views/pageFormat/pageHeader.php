@@ -1,13 +1,11 @@
 <?php
 /* ----------------------------------------------------------------------
- * views/pageFormat/pageHeader.php : 
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------
  *
  * Software by Whirl-i-Gig (http://www.whirl-i-gig.com)
- * Copyright 2014-2017 Whirl-i-Gig
+ * Copyright 2014-2018 Whirl-i-Gig
  *
  * For more information visit http://www.CollectiveAccess.org
  *
@@ -25,11 +23,6 @@
  *
  * ----------------------------------------------------------------------
  */
-	$va_lightboxDisplayName = caGetLightboxDisplayName();
-	$vs_lightbox_sectionHeading = ucFirst($va_lightboxDisplayName["section_heading"]);
-	$va_classroomDisplayName = caGetClassroomDisplayName();
-	$vs_classroom_sectionHeading = ucFirst($va_classroomDisplayName["section_heading"]);
-	
 	# Collect the user links: they are output twice, once for toggle menu and once for nav
 	$va_user_links = array();
 	if($this->request->isLoggedIn()){
@@ -55,26 +48,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
 	<?php print MetaTagManager::getHTML(); ?>
-    <link rel="stylesheet" type="text/css" href="<?php print $this->request->getAssetsUrlPath(); ?>/mirador/css/mirador-combined.css">
-	<?php print AssetLoadManager::getLoadHTML($this->request); ?>
-
+	
 	<title><?php print (MetaTagManager::getWindowTitle()) ? MetaTagManager::getWindowTitle() : $this->request->config->get("app_display_name"); ?></title>
 	
-	<script type="text/javascript">
-		jQuery(document).ready(function() {
-    		jQuery('#browse-menu').on('click mouseover mouseout mousemove mouseenter',function(e) { e.stopPropagation(); });
-    	});
-	</script>
-<?php
-	if(Debug::isEnabled()) {		
-		//
-		// Pull in JS and CSS for debug bar
-		// 
-		$o_debugbar_renderer = Debug::$bar->getJavascriptRenderer();
-		$o_debugbar_renderer->setBaseUrl(__CA_URL_ROOT__.$o_debugbar_renderer->getBaseUrl());
-		print $o_debugbar_renderer->renderHead();
-	}
-?>
+	
+    <link rel='stylesheet' href='assets/styles.css' type='text/css' media='all'/>
+    <script src="assets/main.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default yamm" role="navigation">
@@ -136,14 +115,6 @@
 						<button type="submit" class="btn-search" id="headerSearchButton"><span class="glyphicon glyphicon-search"></span></button>
 					</div>
 				</form>
-				<script type="text/javascript">
-					$(document).ready(function(){
-						$('#headerSearchButton').prop('disabled',true);
-						$('#headerSearchInput').keyup(function(){
-							$('#headerSearchButton').prop('disabled', this.value == "" ? true : false);     
-						})
-					});
-				</script>
 				<ul class="nav navbar-nav navbar-right menuItems">
 					<li <?php print ($this->request->getController() == "About") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("About"), "", "", "About", "Index"); ?></li>
 					<?php print $this->render("pageFormat/browseMenu.php"); ?>	

@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * themes/default/views/bundles/ca_objects_default_html.php : 
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------

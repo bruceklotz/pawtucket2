@@ -1,7 +1,5 @@
 <?php
 /* ----------------------------------------------------------------------
- * bundles/ca_search_form_attributes.php : bundle to render attributes for "advanced" (field-level) search forms
- * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------
