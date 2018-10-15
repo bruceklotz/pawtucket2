@@ -12,36 +12,36 @@ print "<p>Enter your search terms in the fields below.</p>";
 <div class='advancedContainer'>
 	<div class='row'>
 		<div class="advancedSearchField col-sm-12">
-			<span class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Search across all fields in the database.">Keyword</span>
-			{{{_fulltext%width=200px&height=1}}}
+			<label class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Search across all fields in the database.">Keyword</label>
+			<div class="form-group">{{{_fulltext%width=200px&height=1}}}</div>
 		</div>			
 	</div>		
 	<div class='row'>
 		<div class="advancedSearchField col-sm-12">
-			<span class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Limit your search to Object Titles only.">Title</span>
-			{{{ca_objects.preferred_labels.name%width=220px}}}
+			<label class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Limit your search to Object Titles only.">Title</label>
+			<div class="form-group">{{{ca_objects.preferred_labels.name%width=220px}}}</div>
 		</div>
 	</div>
 	<div class='row'>
 		<div class="advancedSearchField col-sm-6">
-			<span class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Search object identifiers.">Accession number</span>
-			{{{ca_objects.idno%width=210px}}}
+			<label class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Search object identifiers.">Accession number</label>
+			<div class="form-group">{{{ca_objects.idno%width=210px}}}</div>
 		</div>
 		<div class="advancedSearchField col-sm-6">
-			<span class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Limit your search to object types.">Type</span>
-			{{{ca_objects.type_id%height=30px}}}
+			<label class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Limit your search to object types.">Type</label>
+			<div class="">{{{ca_objects.type_id%height=30px}}}</div>
 		</div>
 	</div>
 	<div class='row'>
 		<div class="advancedSearchField col-sm-12">
-			<span class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Search records of a particular date or date range.">Date range <i>(e.g. 1970-1979)</i></span>
-			{{{ca_objects.dates.dates_value%width=200px&height=40px&useDatePicker=0}}}
+			<label class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Search records of a particular date or date range.">Date range <i>(e.g. 1970-1979)</i></label>
+			<div class="form-group">{{{ca_objects.dates.dates_value%width=200px&height=40px&useDatePicker=0}}}</div>
 		</div>
 	</div>
 	<div class='row'>
 		<div class="advancedSearchField col-sm-12">
-			<span class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Search records within a particular collection.">Collection </span>
-			{{{ca_collections.preferred_labels%restrictToTypes=collection%width=200px&height=40px}}}
+			<label class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Search records within a particular collection.">Collection </label>
+			<div class="form-group">{{{ca_collections.preferred_labels%restrictToTypes=collection%width=200px&height=40px}}}</div>
 		</div>
 	</div>
 	<br style="clear: both;"/>
@@ -61,8 +61,8 @@ print "<p>Enter your search terms in the fields below.</p>";
 </div><!-- end row -->
 
 <script>
-	jQuery(document).ready(function() {
-		$('.advancedSearchField .formLabel').popover(); 
-	});
-	
+	// jQuery(document).ready(function() {
+// 		$('.advancedSearchField .formLabel').popover(); 
+// 	});
+// 	
 </script>

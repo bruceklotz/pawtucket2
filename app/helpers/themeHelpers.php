@@ -140,7 +140,7 @@
 	 */
 	function caGetPageCSSClasses() {
 		global $g_theme_page_css_classes;
-		return (is_array($g_theme_page_css_classes) && sizeof($g_theme_page_css_classes)) ? "class='".join(' ', $g_theme_page_css_classes)."'" : '';
+		return (is_array($g_theme_page_css_classes) && sizeof($g_theme_page_css_classes)) ? "class='".join(' ', $g_theme_page_css_classes)." container'" : '';
 	}
 	# ---------------------------------------
 	/**

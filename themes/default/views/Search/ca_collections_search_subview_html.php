@@ -115,29 +115,29 @@
 			<div class='allLink'><?php print caNavLink($this->request, 'all '.$va_block_info['displayName'].' results', '', '', 'Search', '{{{block}}}', array('search' => $vs_search));?></div>
 			
 			<script type="text/javascript">
-				jQuery(document).ready(function() {
-					jQuery('#{{{block}}}Results').hscroll({
-						name: '{{{block}}}',
-						itemCount: <?php print $qr_results->numHits(); ?>,
-						preloadCount: <?php print $vn_count; ?>,
-						
-						itemWidth: jQuery('.{{{block}}}Result').outerWidth(true),
-						itemsPerLoad: <?php print $vn_hits_per_block; ?>,
-						itemLoadURL: '<?php print caNavUrl($this->request, '*', '*', '*', array('block' => $vs_block, 'search'=> $vs_search)); ?>',
-						itemContainerSelector: '.blockResultsScroller',
-						
-						sortParameter: '{{{block}}}Sort',
-						sortControlSelector: '#{{{block}}}_sort',
-						
-						sortDirection: '{{{sortDirection}}}',
-						sortDirectionParameter: '{{{block}}}SortDirection',
-						sortDirectionSelector: '#{{{block}}}_sort_direction',
-						
-						scrollPreviousControlSelector: '#{{{block}}}scrollButtonPrevious',
-						scrollNextControlSelector: '#{{{block}}}scrollButtonNext',
-						cacheKey: '{{{cacheKey}}}'
-					});
-				});
+				// jQuery(document).ready(function() {
+// 					jQuery('#{{{block}}}Results').hscroll({
+// 						name: '{{{block}}}',
+// 						itemCount: <?php print $qr_results->numHits(); ?>,
+// 						preloadCount: <?php print $vn_count; ?>,
+// 						
+// 						itemWidth: jQuery('.{{{block}}}Result').outerWidth(true),
+// 						itemsPerLoad: <?php print $vn_hits_per_block; ?>,
+// 						itemLoadURL: '<?php print caNavUrl($this->request, '*', '*', '*', array('block' => $vs_block, 'search'=> $vs_search)); ?>',
+// 						itemContainerSelector: '.blockResultsScroller',
+// 						
+// 						sortParameter: '{{{block}}}Sort',
+// 						sortControlSelector: '#{{{block}}}_sort',
+// 						
+// 						sortDirection: '{{{sortDirection}}}',
+// 						sortDirectionParameter: '{{{block}}}SortDirection',
+// 						sortDirectionSelector: '#{{{block}}}_sort_direction',
+// 						
+// 						scrollPreviousControlSelector: '#{{{block}}}scrollButtonPrevious',
+// 						scrollNextControlSelector: '#{{{block}}}scrollButtonNext',
+// 						cacheKey: '{{{cacheKey}}}'
+// 					});
+// 				});
 			</script>
 <?php
 		}else{
@@ -145,13 +145,13 @@
 			if($this->getVar("sortDirection") == "desc"){
 ?>
 				<script type="text/javascript">
-					jQuery('#<?php print $vs_block; ?>_sort_direction').find('span').removeClass('glyphicon-sort-by-alphabet').addClass('glyphicon-sort-by-alphabet-alt');
+					//jQuery('#<?php print $vs_block; ?>_sort_direction').find('span').removeClass('glyphicon-sort-by-alphabet').addClass('glyphicon-sort-by-alphabet-alt');
 				</script>
 <?php
 			}else{
 ?>
 				<script type="text/javascript">
-					jQuery('#<?php print $vs_block; ?>_sort_direction').find('span').removeClass('glyphicon-sort-by-alphabet-alt').addClass('glyphicon-sort-by-alphabet');
+					//jQuery('#<?php print $vs_block; ?>_sort_direction').find('span').removeClass('glyphicon-sort-by-alphabet-alt').addClass('glyphicon-sort-by-alphabet');
 				</script>
 <?php
 			}

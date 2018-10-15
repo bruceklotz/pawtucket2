@@ -127,14 +127,14 @@
 ?>
 					</div><!-- end browseResultsContainer -->
 <script type="text/javascript">
-	jQuery(document).ready(function() {
-		jQuery('#browseResultsContainer').jscroll({
-			autoTrigger: true,
-			loadingHtml: "<?php print caBusyIndicatorIcon($this->request).' '.addslashes(_t('Loading...')); ?>",
-			padding: 60,
-			nextSelector: 'a.jscroll-next'
-		});
-	});
+	// jQuery(document).ready(function() {
+// 		jQuery('#browseResultsContainer').jscroll({
+// 			autoTrigger: true,
+// 			loadingHtml: "<?php print caBusyIndicatorIcon($this->request).' '.addslashes(_t('Loading...')); ?>",
+// 			padding: 60,
+// 			nextSelector: 'a.jscroll-next'
+// 		});
+// 	});
 
 </script><?php
 		}

@@ -68,11 +68,11 @@
 if (!$vb_ajax) {	// !ajax
 ?>
 <div class="row" style="clear:both;">
-	<div class='<?php print ($vs_result_col_class) ? $vs_result_col_class : "col-sm-8 col-md-8 col-lg-8"; ?>'>
+	<div class='<?php print ($vs_result_col_class) ? $vs_result_col_class : "col-sm-8 col-md-9 col-lg-9"; ?>'>
 <?php 
 			if($vs_sort_control_type == 'list'){
 				if(is_array($va_sorts = $this->getVar('sortBy')) && sizeof($va_sorts)) {
-					print "<H5 id='bSortByList'><ul><li><strong>"._t("Sort by:")."</strong></li>\n";
+					print "<H5 id='bSortByList'><ul><li><strong>"._t("Sort by")."</strong></li>\n";
 					$i = 0;
 					foreach($va_sorts as $vs_sort => $vs_sort_flds) {
 						$i++;
@@ -95,7 +95,7 @@ if (!$vb_ajax) {	// !ajax
 			print _t('%1 %2 %3', $vn_result_size, ($va_browse_info["labelSingular"]) ? $va_browse_info["labelSingular"] : $t_instance->getProperty('NAME_SINGULAR'), ($vn_result_size == 1) ? _t("Result") : _t("Results"));	
 ?>		
 			<div class="btn-group">
-				<a href="#" data-toggle="dropdown"><i class="fa fa-gear bGear"></i></a>
+				<a href="#" data-toggle="dropdown"><span class="lnr lnr-cog"></span></a>
 				<ul class="dropdown-menu" role="menu">
 <?php
 					if(($vs_table == "ca_objects") && $vn_result_size && (is_array($va_add_to_set_link_info) && sizeof($va_add_to_set_link_info))){
@@ -105,7 +105,7 @@ if (!$vb_ajax) {	// !ajax
 					}
 					if($vs_sort_control_type == 'dropdown'){
 						if(is_array($va_sorts = $this->getVar('sortBy')) && sizeof($va_sorts)) {
-							print "<li class='dropdown-header'>"._t("Sort by:")."</li>\n";
+							print "<li class='dropdown-header'>"._t("Sort by")."</li>\n";
 							foreach($va_sorts as $vs_sort => $vs_sort_flds) {
 								if ($vs_current_sort === $vs_sort) {
 									print "<li><a href='#'><em>{$vs_sort}</em></a></li>\n";
@@ -114,7 +114,7 @@ if (!$vb_ajax) {	// !ajax
 								}
 							}
 							print "<li class='divider'></li>\n";
-							print "<li class='dropdown-header'>"._t("Sort order:")."</li>\n";
+							print "<li class='dropdown-header'>"._t("Sort order")."</li>\n";
 							print "<li>".caNavLink($this->request, (($vs_sort_dir == 'asc') ? '<em>' : '')._t("Ascending").(($vs_sort_dir == 'asc') ? '</em>' : ''), '', '*', '*', '*', array('view' => $vs_current_view, 'key' => $vs_browse_key, 'direction' => 'asc', '_advanced' => $vn_is_advanced ? 1 : 0))."</li>";
 							print "<li>".caNavLink($this->request, (($vs_sort_dir == 'desc') ? '<em>' : '')._t("Descending").(($vs_sort_dir == 'desc') ? '</em>' : ''), '', '*', '*', '*', array('view' => $vs_current_view, 'key' => $vs_browse_key, 'direction' => 'desc', '_advanced' => $vn_is_advanced ? 1 : 0))."</li>";
 						}
@@ -131,7 +131,7 @@ if (!$vb_ajax) {	// !ajax
 					if(is_array($va_export_formats) && sizeof($va_export_formats)){
 						// Export as PDF links
 						print "<li class='divider'></li>\n";
-						print "<li class='dropdown-header'>"._t("Download results as:")."</li>\n";
+						print "<li class='dropdown-header'>"._t("Download results as")."</li>\n";
 						foreach($va_export_formats as $va_export_format){
 							print "<li class='".$va_export_format["code"]."'>".caNavLink($this->request, $va_export_format["name"], "", "*", "*", "*", array("view" => "pdf", "download" => true, "export_format" => $va_export_format["code"], "key" => $vs_browse_key))."</li>";
 						}
@@ -193,8 +193,8 @@ if (!$vb_ajax) {	// !ajax
 		}
 ?>
 		<form id="setsSelectMultiple">
-		<div class="row">
-			<div id="browseResultsContainer">
+		<div class="row" id="browseResultsContainer">
+
 <?php
 		if($vb_is_search && !$vn_result_size && $vs_search){
 			# --- try to display did you mean results if available
@@ -227,11 +227,11 @@ if(($o_config->get("cache_timeout") > 0) && ExternalCache::contains($vs_cache_ke
 
 if (!$vb_ajax) {	// !ajax
 ?>
-			</div><!-- end browseResultsContainer -->
+
 		</div><!-- end row -->
 		</form>
 	</div><!-- end col-8 -->
-	<div class="<?php print ($vs_refine_col_class) ? $vs_refine_col_class : "col-sm-4 col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-1"; ?>">
+	<div class="<?php print ($vs_refine_col_class) ? $vs_refine_col_class : "col-sm-4 col-md-3 col-lg-3"; ?>">
 		<div id="bViewButtons">
 <?php
 		if(is_array($va_views) && (sizeof($va_views) > 1)){

@@ -65,11 +65,13 @@
 		
 
 		$vn_col_span = 3;
+		$vn_col_span_md = 4;
 		$vn_col_span_sm = 4;
 		$vb_refine = false;
 		if(is_array($va_facets) && sizeof($va_facets)){
 			$vb_refine = true;
 			$vn_col_span = 3;
+			$vn_col_span_md = 4;
 			$vn_col_span_sm = 6;
 			$vn_col_span_xs = 6;
 		}
@@ -110,7 +112,12 @@
 				if(($o_config->get("cache_timeout") > 0) && ExternalCache::contains($vs_cache_key,'browse_result')){
 					print ExternalCache::fetch($vs_cache_key, 'browse_result');
 				}else{			
-					$vs_idno_detail_link 	= caDetailLink($this->request, $qr_res->get("{$vs_table}.idno"), '', $vs_table, $vn_id);
+					if ($vn_idno = $qr_res->get("{$vs_table}.idno")) {
+						$vs_idno_detail_link 	= "<div class='idno'>".$vn_idno."</div>";
+					} else { 
+						$vs_idno_detail_link = null; 
+					}
+					
 					$vs_label_detail_link 	= caDetailLink($this->request, $qr_res->get("{$vs_table}.preferred_labels"), '', $vs_table, $vn_id);
 					$vs_thumbnail = "";
 					$vs_type_placeholder = "";
@@ -142,18 +149,15 @@
 					$vs_expanded_info = $qr_res->getWithTemplate($vs_extended_info_template);
 
 					$vs_result_output = "
-		<div class='bResultItemCol col-xs-{$vn_col_span_xs} col-sm-{$vn_col_span_sm} col-md-{$vn_col_span}'>
+		<div class='bResultItemCol col-xs-{$vn_col_span_xs} col-sm-{$vn_col_span_sm} col-md-{$vn_col_span_md} col-lg-{$vn_col_span}'>
 			<div class='bResultItem' id='row{$vn_id}' onmouseover='jQuery(\"#bResultItemExpandedInfo{$vn_id}\").show();'  onmouseout='jQuery(\"#bResultItemExpandedInfo{$vn_id}\").hide();'>
 				<div class='bSetsSelectMultiple'><input type='checkbox' name='object_ids' value='{$vn_id}'></div>
 				<div class='bResultItemContent'><div class='text-center bResultItemImg'>{$vs_rep_detail_link}</div>
 					<div class='bResultItemText'>
-						<small>{$vs_idno_detail_link}</small><br/>{$vs_label_detail_link}
+						{$vs_idno_detail_link}{$vs_label_detail_link}{$vs_expanded_info}
 					</div><!-- end bResultItemText -->
 				</div><!-- end bResultItemContent -->
-				<div class='bResultItemExpandedInfo' id='bResultItemExpandedInfo{$vn_id}'>
-					<hr>
-					{$vs_expanded_info}{$vs_add_to_set_link}
-				</div><!-- bResultItemExpandedInfo -->
+				<div class='addToSetLink'>{$vs_add_to_set_link}</div>
 			</div><!-- end bResultItem -->
 		</div><!-- end col -->";
 					ExternalCache::save($vs_cache_key, $vs_result_output, 'browse_result');

@@ -26,68 +26,94 @@
  
 	$t_subject = $this->getVar('t_subject');	
 ?>
-
-
-	<div class="row collection">
-		<div class="col-sm-6">	
-			<div class="contributeForm">
-				<h1>Search Collection</h1>
-				
-				<div class="notificationMessage">{{{errors}}}</div>
-				
-				{{{form}}}
-					
-					<div class="contributeField">
-						{{{ca_objects.preferred_labels:error}}}
-						Title:<br/>
-						{{{ca_objects.preferred_labels.name%width=220px}}}
-					</div>
-					<div class="contributeField">
-						{{{ca_entities.preferred_labels:error}}}
-						Artist:<br/>
-						{{{ca_entities.preferred_labels.displayname%width=220px&height=40px&relationshipType=artist&type=ind}}}
-					</div>
-					<div class="contributeField">
-						{{{ca_objects.date:error}}}
-						Date:<br/>
-						{{{ca_objects.date%width=220px}}}   
-					</div>
-					<div class="contributeField">
-						{{{ca_objects.description:error}}}
-						Description:<br/>
-						{{{ca_objects.description%width=220px&height=120px}}}   
-					</div>
-					
-					<div class="contributeField">
-						{{{ca_object_representations.media:error}}}
-						Media(1):<br/>
-						
-						Title: {{{ca_object_representations.preferred_labels.name}}} 
-						{{{ca_object_representations.media}}} <br/>
-						
-						{{{ca_object_representations.media:error}}}
-						Media(2):<br/>
-						
-						Title: {{{ca_object_representations.preferred_labels.name}}} 
-						{{{ca_object_representations.media}}} <br/>
-						
-						{{{ca_object_representations.media:error}}}
-						Media(3):<br/>
-						
-						Title: {{{ca_object_representations.preferred_labels.name}}} 
-						{{{ca_object_representations.media}}} <br/>
-					</div>
-
-					<br style="clear: both;"/>
-<?php					
-			print $this->render('Contribute/spam_check_html.php');
-			print $this->render('Contribute/terms_and_conditions_check_html.php');
-?>
-
-					<div style="float: right; margin-left: 20px;">{{{reset%label=Reset}}}</div>
-					<div style="float: right;">{{{submit%label=Save}}}</div>
-				{{{/form}}}
-				<div class='clearfix'></div>
-			</div>
-		</div>
+<div class="row collection">
+	<div class="col-sm-12" style="padding-left:30px;">
+		<h1>Submit to the Collection</h1>	
+		<div class="notificationMessage">{{{errors}}}</div>	
 	</div>
+</div>	
+<div class="row collection">
+	<div class="col-sm-12">	
+		<div class="contributeForm">
+			{{{form}}}
+			<div class="container">
+				<div class="row">
+					<div class="contributeField col-sm-6">
+						{{{ca_objects.preferred_labels:error}}}
+						<label>Title</label>
+						<div class="form-group">
+							{{{ca_objects.preferred_labels.name%width=220px}}}
+						</div>
+					</div>
+					<div class="contributeField col-sm-6">
+						{{{ca_entities.preferred_labels:error}}}
+						<label>Artist</label>
+						<div class="form-group">
+							{{{ca_entities.preferred_labels.displayname%width=220px&height=40px&relationshipType=artist&type=ind}}}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="contributeField col-sm-12">
+						<div class="contributeField">
+							{{{ca_objects.date:error}}}
+							<label>Date</label>
+							<div class="form-group">
+								{{{ca_objects.date.dates_value%width=220px}}} 
+							</div>  
+						</div>
+					</div>
+				</div>		
+				<div class="row">
+					<div class="contributeField col-sm-12">
+						<div class="contributeField">
+							{{{ca_objects.description:error}}}
+							<label>Description</label>
+							<div class="form-group">
+								{{{ca_objects.description%width=220px&height=120px}}}
+							</div>   
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">				
+						<div class="contributeField media">
+							{{{ca_object_representations.media:error}}}
+							<div><label>Media(1)</label></div>
+					
+							<div class='mediaCaption'><label>Caption</label> <div class="form-group">{{{ca_object_representations.preferred_labels.name}}}</div></div>
+							<div>{{{ca_object_representations.media}}} </div>
+						</div>
+						<div class="contributeField media">
+							{{{ca_object_representations.media:error}}}
+							<div><label>Media(2)</label></div>
+					
+							<div class='mediaCaption'><label>Caption</label> <div class="form-group">{{{ca_object_representations.preferred_labels.name}}}</div></div>
+							<div>{{{ca_object_representations.media}}} </div>
+						</div>
+						<div class="contributeField media">
+							{{{ca_object_representations.media:error}}}
+							<div><label>Media(3)</label></div>
+					
+							<div class='mediaCaption'><label>Caption</label> <div class="form-group">{{{ca_object_representations.preferred_labels.name}}} </div></div>
+							<div>{{{ca_object_representations.media}}} </div>
+						</div>
+					</div>
+				</div>		
+
+				<br style="clear: both;"/>
+<?php					
+				print "<div class='spamCheck'>".$this->render('Contribute/spam_check_html.php')."</div>";
+				print "<div class='spamCheck'>".$this->render('Contribute/terms_and_conditions_check_html.php')."</div>";
+?>
+				<div class='submitContribute'>
+					<div class="btn btn-default">{{{reset%label=Reset}}}</div>
+					<div class="btn btn-default">{{{submit%label=Save}}}</div>
+				</div>
+				
+				</div><!-- end container -->
+			{{{/form}}}
+			<div class='clearfix'></div>
+		</div><!-- end form -->
+	</div><!-- end col -->
+</div><!-- end row -->
