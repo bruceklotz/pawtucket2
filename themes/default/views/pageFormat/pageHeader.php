@@ -48,7 +48,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
 	<?php print MetaTagManager::getHTML(); ?>
-	
 	<title><?php print (MetaTagManager::getWindowTitle()) ? MetaTagManager::getWindowTitle() : $this->request->config->get("app_display_name"); ?></title>
 	
     <link rel='stylesheet' href='<?php print $this->request->getAssetsUrlPath(); ?>/styles.css' type='text/css' media='all'/>
@@ -97,6 +96,7 @@
 						<a href="#" class="dropdown-toggle icon" data-toggle="dropdown"><span class="lnr lnr-neutral"></span></a>
 						<ul class="dropdown-menu"><?php print join("\n", $va_user_links); ?></ul>
 					</li>
+<<<<<<< HEAD
 					<li class="navLink">
 						<form class="navbar-form navbar-right" role="search" action="<?php print caNavUrl($this->request, '', 'MultiSearch', 'Index'); ?>">
 							<div class="formOutline">
@@ -107,6 +107,35 @@
 							</div>
 						</form>
 					</li>				
+=======
+				</ul>
+<?php
+	}
+?>
+				<form class="navbar-form navbar-right" role="search" action="<?php print caNavUrl($this->request, '', 'MultiSearch', 'Index'); ?>">
+					<div class="formOutline">
+						<div class="form-group">
+							<input type="text" class="form-control" id="headerSearchInput" placeholder="Search" name="search">
+						</div>
+						<button type="submit" class="btn-search" id="headerSearchButton"><span class="glyphicon glyphicon-search"></span></button>
+					</div>
+				</form>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('#headerSearchButton').prop('disabled',true);
+						$('#headerSearchInput').on('keyup', function(){
+							$('#headerSearchButton').prop('disabled', this.value == "" ? true : false);     
+						})
+					});
+				</script>
+				<ul class="nav navbar-nav navbar-right menuItems">
+					<li <?php print ($this->request->getController() == "About") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("About"), "", "", "About", "Index"); ?></li>
+					<?php print $this->render("pageFormat/browseMenu.php"); ?>	
+					<li <?php print (($this->request->getController() == "Search") && ($this->request->getAction() == "advanced")) ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Advanced Search"), "", "", "Search", "advanced/objects"); ?></li>
+					<li <?php print ($this->request->getController() == "Gallery") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Gallery"), "", "", "Gallery", "Index"); ?></li>
+					<li <?php print ($this->request->getController() == "Collections") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Collections"), "", "", "Collections", "index"); ?></li>					
+					<li <?php print ($this->request->getController() == "Contact") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Contact"), "", "", "Contact", "Form"); ?></li>
+>>>>>>> origin/develop
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- end container -->
