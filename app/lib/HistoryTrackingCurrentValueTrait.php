@@ -88,11 +88,6 @@
 				        }
 				    }
 				    
-				    // Make relationship type entry into default type entry
-				   //  if (is_array($map['ca_storage_locations'])) {
-// 				        $map['ca_storage_locations']['__default__'] = array_shift($map[$t]);
-// 				    }
-				    
 				 	$history_tracking_policies = [
 				 		'defaults' => [
 				 			'ca_objects' => '__default__',
