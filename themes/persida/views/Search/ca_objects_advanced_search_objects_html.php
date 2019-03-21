@@ -63,6 +63,12 @@ print "<p>Enter your search terms in the fields below.</p>";
 			{{{ca_objects.medium%width=200px&height=1}}}
 		</div>
 	</div>
+	<div class='row'>
+		<div class="advancedSearchField col-sm-12">
+			<span class='formLabel' data-toggle="popover" data-trigger="hover" data-content="Search artwork current location.">Current location</span>
+			{{{ca_objects.current_value.__default__%width=200px&height=1&label=Current_location}}}
+		</div>			
+	</div>
 <?php
 	if($this->request->user->hasRole("admin") || $this->request->user->hasRole("dj") || $this->request->user->hasRole("purchasing")){
 ?>

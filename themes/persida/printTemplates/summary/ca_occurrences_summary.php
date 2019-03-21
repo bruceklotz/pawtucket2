@@ -49,8 +49,13 @@
 
 ?>
 
-	<div class='tombstone'>
-		<div style='width:400px;float:left;'>
+	<div class='tombstoneLeft'>
+<?php
+		if ($vs_media = $t_item->get('ca_object_representations.media.medium')) {
+			print "<div class='media' style='width:250px; float:right; margin-left:20px; margin-bottom:20px;'>".$vs_media."</div>";
+		}																																								
+?>
+		<div>
 <?php
 		if ($vs_pub_type = $t_item->get('ca_occurrences.bib_types', array('convertCodesToDisplayText' => true))) {
 			print "<div class='unit'><h6>Type of Material</h6>".$vs_pub_type."</div>";
@@ -67,12 +72,12 @@
 		if ($vs_venue = $t_item->get('ca_entities.preferred_labels', array('restrictToRelationshipTypes' => array('venue')))) {
 			print "<div class='unit'><h6>Venue</h6>".$vs_venue."</div>";
 		}
-		if ($vs_entities = $t_item->get('ca_entities.preferred_labels', array('excludeRelationshipTypes' => array('venue'), 'delimiter' => ', '))) {
-			print "<div class='unit'><h6>Related People & Organizations</h6>".$vs_entities."</div>";
-		}					
 		if ($vs_travel = $t_item->get('ca_occurrences.traveling_yn', array('convertCodesToDisplayText' => true))) {
 			print "<div class='unit'><h6>Traveling Exhibition?</h6>".$vs_travel."</div>";
 		}						
+		if ($vs_entities = $t_item->get('ca_entities.preferred_labels', array('excludeRelationshipTypes' => array('venue'), 'delimiter' => ', '))) {
+			print "<div class='unit'><h6>Related People & Organizations</h6>".$vs_entities."</div>";
+		}					
 		if ($vs_edition = $t_item->get('ca_occurrences.edition_bib', array('delimiter' => '<br/>'))) {
 			print "<div class='unit'><h6>Edition</h6>".$vs_edition."</div>";
 		}
@@ -92,17 +97,13 @@
 			print "<div class='unit'><h6>Notes</h6>".$vs_notes."</div>";
 		}
 		print "</div>";
-		if ($vs_media = $t_item->get('ca_object_representations.media.medium')) {
-			print "<div class='media' style='width:250px;float:right;'>".$vs_media."</div>";
-		}																																								
 		print "<div style='width:100%;clear:both;'></div>";
 		$va_object_ids = $t_item->get('ca_objects.object_id', array('returnAsArray' => true, 'sort' => 'ca_entities.preferred_labels.surname;ca_objects.object_id'));
 		if ($va_object_ids) {	
 			print "<hr/ style='border:0px;border-top:solid 1px #ccc;height:1px;'>";
-			print "<table>";
 			foreach ($va_object_ids as $va_key => $vn_object_id) {
 				$t_object = new ca_objects($vn_object_id);
-				print "<tr class='divide'>";
+				print "<table class='relatedArtwork'><tr>";
 				print "<td class='metaData'>";
 				print "<div>".$t_object->get('ca_entities.preferred_labels', array('restrictToRelationshipTypes' => array('artist')))."</div>";
 				print "<div>".$t_object->get('ca_objects.preferred_labels')."</div>";
@@ -119,8 +120,8 @@
 				print "</td>";
 				print "<td class='objImage'>".$t_object->get('ca_object_representations.media.small')."</td>";
 				print "</tr>";
+				print "</table>";
 			}
-			print "</table>";
 		}
 ?>
 	</div>

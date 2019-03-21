@@ -92,7 +92,7 @@
 					}
 					print "<div class='data'>".$vo_result->getWithTemplate('^ca_objects.edition')."</div>";					
 						
-					print "<div class='data'>".$vo_result->get('ca_objects.ca_objects_location')."</div>";					
+					print "<div class='data'>".$vo_result->get('ca_objects.history_tracking_current_value')."</div>";					
 ?>
 					</div>				
 				</td>

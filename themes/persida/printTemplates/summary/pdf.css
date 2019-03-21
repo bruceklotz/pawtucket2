@@ -23,6 +23,7 @@ body{ font: "helvetica, sans-serif"; margin:0px; padding:0px;}
 h6 {font-size:12px; font-weight:bold;text-transform:uppercase; margin:0px 0px 5px 0px; padding:0px;}
 .tombstone { margin-top:20px;}
 .tombstone .unit { text-align:center; margin-bottom:5px;}
+.tombstoneLeft .unit { text-align:left;}
 .clear { clear: both; }
 
 
@@ -48,4 +49,5 @@ h6 {font-size:12px; font-weight:bold;text-transform:uppercase; margin:0px 0px 5p
 }
 .objImage{
 	text-align:right;
+	padding-left:10px;
 }
