@@ -515,16 +515,18 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 		    
 		    $vs_fld_num = null;
 		    if ($vn_fld_num = $this->getFieldNum($vs_table, $vs_subsubsubfield ? $vs_subsubsubfield : $vs_subsubfield)) {
-		        $vs_fld_num = "I{$vn_fld_num}";
+		        $vs_fld_num = "CV{$vs_subfield}_I{$vn_fld_num}";
 		    } elseif($t_element = ca_metadata_elements::getInstance($vs_subsubsubfield ? $vs_subsubsubfield : $vs_subsubfield)) {
-		        $vs_fld_num = "A".$t_element->getPrimaryKey();
+		        $vs_fld_num = "CV{$vs_subfield}_A".$t_element->getPrimaryKey();
+		    } else {
+		        $vs_fld_num = "CV{$vs_subfield}";
 		    }
 		    return array(
 				'access_point' => $va_tmp[0],
 				'relationship_type' => (int)$vn_rel_type,
 				'table_num' => $vs_table_num,
 				'element_id' => null,
-				'field_num' => "CV{$vs_subfield}_{$vs_fld_num}",
+				'field_num' => $vs_fld_num,
 				'datatype' => 'CV',
 				'element_info' => null,
 				'relationship_type_ids' => $va_rel_type_ids

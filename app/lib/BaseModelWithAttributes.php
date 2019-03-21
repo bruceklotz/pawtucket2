@@ -1385,6 +1385,10 @@
 			if(!$pa_options) { $pa_options = array(); }
 			$va_tmp = explode('.', $ps_field);
 			
+			if (($va_tmp[1] == 'current_value') && method_exists($this, 'getHistory')) { 
+                return caHTMLTextInput($ps_field, array('value' => caGetOption('value', $pa_options, null)));			
+			}
+			
 			if ($vs_rel_types = join(";", caGetOption('restrictToRelationshipTypes', $pa_options, array()))) { $vs_rel_types = "/{$vs_rel_types}"; }
 			if ($va_tmp[1] == $this->getTypeFieldName()) {
 				return $this->getTypeListAsHTMLFormElement($ps_field.$vs_rel_types, array('class' => caGetOption('class', $pa_options, null)), array_merge($pa_options, array('nullOption' => '-')));
