@@ -31,9 +31,6 @@
 					if ($va_entity_notes = $t_item->get('ca_entities.entity_notes', array('delimiter' => '<br/>'))) {
 						print "<div class='unit'><h6>Entity Notes</h6>".$va_entity_notes."</div>";
 					}
-					if ($va_entities = $t_item->get('ca_entities.related.preferred_labels', array('returnAsLink' => true, 'delimiter' => '<br/>'))) {
-						print "<div class='unit'><h6>Related People & Organizations</h6>".$va_entities."</div>";
-					}	
 					if ($va_exhibitions = $t_item->get('ca_occurrences.preferred_labels', array('returnAsLink' => true, 'delimiter' => '<br/>', 'restrictToTypes' => array('exhibition')))) {
 						print "<div class='unit'><h6>Related Exhibitions</h6>".$va_exhibitions."</div>";
 					}													

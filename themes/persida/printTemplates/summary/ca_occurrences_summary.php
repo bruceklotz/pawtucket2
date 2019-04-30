@@ -116,7 +116,7 @@
 				}
 				print "<div>".$t_object->get('ca_objects.edition')."</div>";
 				print "<div>".$t_object->get('ca_objects.art_types', array('convertCodesToDisplayText' => true))."</div>";	
-				print "<div>".$t_object->get('ca_objects.ca_objects_location')."</div>";			
+				#print "<div>".$t_object->get('ca_objects.ca_objects_location')."</div>";			
 				print "</td>";
 				print "<td class='objImage'>".$t_object->get('ca_object_representations.media.small')."</td>";
 				print "</tr>";

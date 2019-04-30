@@ -102,12 +102,9 @@
 ?>
 	</div>	
 <?php		
-		if ($va_entities = $t_item->get('ca_entities.related.preferred_labels', array('delimiter' => '<br/>'))) {
-			print "<hr/ style='border:0px;border-top:solid 1px #ccc;height:1px;'><div class='unit'><h6>Related People & Organizations</h6>".$va_entities."</div>";
-		}	
-		if ($va_exhibitions = $t_item->get('ca_occurrences.preferred_labels', array('delimiter' => '<br/>', 'restrictToTypes' => array('exhibition')))) {
-			print "<hr/ style='border:0px;border-top:solid 1px #ccc;height:1px;'><div class='unit'><h6>Related Exhibitions</h6>".$va_exhibitions."</div>";
-		}
+		#if ($va_exhibitions = $t_item->get('ca_occurrences.preferred_labels', array('delimiter' => '<br/>', 'restrictToTypes' => array('exhibition')))) {
+		#	print "<hr/ style='border:0px;border-top:solid 1px #ccc;height:1px;'><div class='unit'><h6>Related Exhibitions</h6>".$va_exhibitions."</div>";
+		#}
 		$va_object_ids = $t_item->get('ca_objects.object_id', array('returnAsArray' => true, 'sort' => 'ca_entities.preferred_labels.surname;ca_objects.object_id'));
 		if ($va_object_ids) {	
 			print "<hr/ style='border:0px;border-top:solid 1px #ccc;height:1px;'>";
