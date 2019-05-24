@@ -103,6 +103,7 @@
 		//
 			
 		caDoTemplateTagSubstitution($o_view, $pt_subject, $va_template_info['path'], ['checkAccess' => $pa_access_values, 'render' => false]);	
+		($ps_output_filename  =  $o_view->getVar('filename') ) ? $ps_output_filename : $ps_output_filename;
 		caExportViewAsPDF($o_view, $va_template_info, $ps_output_filename, []);
 		$o_controller = AppController::getInstance();
 		$o_controller->removeAllPlugins();
